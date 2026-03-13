@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark space theme */
+    --background: 15.7 0.02 264;
+    --foreground: 95 0.01 264;
+    --card: 18.5 0.025 260;
+    --card-foreground: 95 0.01 264;
+    --popover: 18.5 0.025 260;
+    --popover-foreground: 95 0.01 264;
+    --primary: 72.5 0.2 145;
+    --primary-foreground: 10 0.01 145;
+    --secondary: 25 0.03 260;
+    --secondary-foreground: 85 0.01 264;
+    --muted: 22 0.025 260;
+    --muted-foreground: 65 0.02 264;
+    --accent: 72.5 0.2 145;
+    --accent-foreground: 10 0.01 145;
+    --destructive: 55 0.22 25;
+    --destructive-foreground: 95 0.01 25;
+    --border: 25 0.025 265;
+    --input: 25 0.025 265;
+    --ring: 72.5 0.2 145;
+    --radius: 0.75rem;
+    --chart-1: 72.5 0.2 145;
+    --chart-2: 65 0.15 200;
+    --chart-3: 60 0.12 240;
+    --chart-4: 55 0.18 100;
+    --chart-5: 50 0.2 30;
+    --sidebar: 13 0.02 264;
+    --sidebar-foreground: 95 0.01 264;
+    --sidebar-primary: 72.5 0.2 145;
+    --sidebar-primary-foreground: 10 0.01 145;
+    --sidebar-accent: 22 0.025 260;
+    --sidebar-accent-foreground: 85 0.01 264;
+    --sidebar-border: 25 0.025 265;
+    --sidebar-ring: 72.5 0.2 145;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .green-glow {
+    box-shadow: 0 0 20px oklch(72.5% 0.2 145 / 0.4), 0 0 40px
+      oklch(72.5% 0.2 145 / 0.15);
+  }
+  .card-glow {
+    box-shadow: 0 4px 24px oklch(10% 0.02 264 / 0.8), inset 0 1px 0
+      oklch(72.5% 0.2 145 / 0.08);
+  }
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(72.5% 0.2 145),
+      oklch(82% 0.18 165)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
